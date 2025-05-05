@@ -29,17 +29,30 @@ if (annyang) {
     annyang.addCommands(commands);
 }
 
+function updateButtonStates() {
+    const isListening = localStorage.getItem('voiceListening') === 'true';
+    const startBtn = document.getElementById('startListeningBtn');
+    const stopBtn = document.getElementById('stopListeningBtn');
+    
+    if (startBtn && stopBtn) {
+        startBtn.disabled = isListening;
+        stopBtn.disabled = !isListening;
+    }
+}
+
 function startListening() {
     if (annyang) {
         annyang.start();
-        alert('Listening started!');
+        localStorage.setItem('voiceListening', 'true');
+        updateButtonStates();
     }
 }
 
 function stopListening() {
     if (annyang) {
         annyang.abort();
-        alert('Listening stopped!');
+        localStorage.setItem('voiceListening', 'false');
+        updateButtonStates();
     }
 }
 
@@ -157,7 +170,13 @@ async function loadBreedInfo(breed) {
     }
 }
 
+// Check and restore listening state on page load
 document.addEventListener('DOMContentLoaded', () => {
+    if (annyang && localStorage.getItem('voiceListening') === 'true') {
+        annyang.start();
+    }
+    updateButtonStates();
+    
     if (window.location.pathname.includes('stocks.html')) {
         loadRedditStocks();
     }
