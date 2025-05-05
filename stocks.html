@@ -1,8 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>INST377 - Stocks</title>
     <link rel="stylesheet" href="styles.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.6.1/annyang.min.js"></script>
@@ -19,15 +15,17 @@
     <h1>Let's chart some stocks!</h1>
 
     <div class="stock-lookup">
-        <input type="text" id="stockTicker" placeholder="Enter stock ticker">
-        <br>
-        <select id="timeRange">
-            <option value="30">30 Days</option>
-            <option value="60">60 Days</option>
-            <option value="90">90 Days</option>
-        </select>
-        <br>
-        <button class="button-64" role="button" onclick="lookupStock()"><span class="text">Lookup</span></button>
+        <form onsubmit="lookupStock(); return false;">
+            <input type="text" id="stockTicker" required maxlength="5">
+            <br>
+            <select id="timeRange">
+                <option value="30">30 Days</option>
+                <option value="60">60 Days</option>
+                <option value="90">90 Days</option>
+            </select>
+            <br>
+            <button class="button-64" role="button" type="submit"><span class="text">Lookup</span></button>
+        </form>
     </div>
 
     <div class="chart-container">

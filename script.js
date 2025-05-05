@@ -56,7 +56,6 @@ function stopListening() {
     }
 }
 
-// Home Page Quote
 async function loadQuote() {
     const response = await fetch('https://zenquotes.io/api/quotes');
     const data = await response.json();
@@ -64,14 +63,9 @@ async function loadQuote() {
     document.getElementById('quote').textContent = quote.q + ' - ' + quote.a;
 }
 
-// Stocks Page
 async function lookupStock() {
     
-    const ticker = document.getElementById('stockTicker').value.toUpperCase();
-    if (!ticker) {
-        alert('Please enter a stock ticker');
-        return;
-    }
+    const ticker = document.getElementById('stockTicker').value;
 
     const days = document.getElementById('timeRange').value;
     const endDate = new Date().toISOString().split('T')[0];
@@ -141,14 +135,13 @@ async function loadDogImages() {
 }
 
 async function loadBreedButtons() {
-
     const response = await fetch('https://dogapi.dog/api/v2/breeds');
     const data = await response.json();
     const breeds = data.data.slice(0, 10).map(breed => breed.attributes.name);
     
     const container = document.getElementById('breedButtons');
     container.innerHTML = breeds.map(breed => 
-        `<button class="button" onclick="loadBreedInfo('${breed}')">${breed}</button>`
+        `<button class="button-33" onclick="loadBreedInfo('${breed}')">${breed}</button>`
     ).join('');
 }
 
