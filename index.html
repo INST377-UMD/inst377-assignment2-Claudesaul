@@ -1,0 +1,54 @@
+<html lang="en">
+<head>
+    <title>INST377 - Activities</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.6.1/annyang.min.js"></script>
+    <script src="script.js"></script>
+</head>
+<body>
+    <h1>INST377 - Activities</h1>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="stocks.html">Stocks</a>
+        <a href="dogs.html">Dogs</a>
+    </nav>
+    
+    <h2>These are some different activities we can try!</h2>
+
+    <div class="button-container">
+        <button class="button-52" onclick="window.location.href='stocks.html'">Stocks</button>
+        <button class="button-52" onclick="window.location.href='dogs.html'">Dogs</button>
+    </div>
+
+    <div class="quote-box">
+        <h3>Quote of the Page Load</h3>
+        <p id="quote"></p>
+    </div>
+
+    <div class="audio-control">
+        <h3>In this web page there are options to Navigate using Audio!</h3>
+        <p>Ensure your Mic is enabled to be able to use this feature</p>
+        <ul>
+            <li>Navigate to a Different Page
+                <ul>
+                    <li>Say: Navigate to &lt;page&gt;</li>
+                </ul>
+            </li>
+            <li>Change the Page Color
+                <ul>
+                    <li>Say: Change the color to &lt;color&gt;</li>
+                </ul>
+            </li>
+            <li>Say Hello Back to you!
+                <ul>
+                    <li>Say: Hello</li>
+                </ul>
+            </li>
+        </ul>
+        <div class="button-container">
+            <button onclick="startListening()" class="button">Turn On Listening</button>
+            <button onclick="stopListening()" class="button">Turn Off Listening</button>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INST377 - Dogs</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.6.1/annyang.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/simple-slider/1.0.0/simpleslider.min.js"></script>
+</head>
+<body>
+    <h1>INST377 - Doggos</h1>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="stocks.html">Stocks</a>
+        <a href="dogs.html">Dogs</a>
+    </nav>
+
+    <h1>Doggos!</h1>
+
+    <div class="carousel" id="dogCarousel" style="width:600px; height:400px; margin: 0 auto;">
+        <!-- Images will be loaded here dynamically -->
+    </div>
+
+    <div id="breedButtons">
+        <!-- Breed buttons will be loaded here dynamically -->
+    </div>
+
+    <div id="breedInfo" style="display: none" class="dog-container">
+        <!-- Breed information will be displayed here -->
+    </div>
+
+    <div class="audio-control">
+        <h3>In this web page there are options to Navigate using Audio!</h3>
+        <p>Ensure your Mic is enabled to be able to use this feature</p>
+        <ul>
+            <li>Navigate to a Different Page
+                <ul>
+                    <li>Say: Navigate to &lt;page&gt;</li>
+                </ul>
+            </li>
+            <li>Change the Page Color
+                <ul>
+                    <li>Say: Change the color to &lt;color&gt;</li>
+                </ul>
+            </li>
+            <li>Say Hello Back to you!
+                <ul>
+                    <li>Say: Hello</li>
+                </ul>
+            </li>
+            <li>Load Dog Breed Information
+                <ul>
+                    <li>Say: Load Dog Breed &lt;breed name&gt;</li>
+                </ul>
+            </li>
+        </ul>
+        <div class="button-container">
+            <button onclick="startListening()" class="button">Turn On Listening</button>
+            <button onclick="stopListening()" class="button">Turn Off Listening</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INST377 - Stocks</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.6.1/annyang.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+</head>
+<body>
+    <h1>INST377 - Activities</h1>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="stocks.html">Stocks</a>
+        <a href="dogs.html">Dogs</a>
+    </nav>
+
+    <h1>Let's chart some stocks!</h1>
+
+    <div class="stock-lookup">
+        <input type="text" id="stockTicker" placeholder="Enter stock ticker">
+        <br>
+        <select id="timeRange">
+            <option value="30">30 Days</option>
+            <option value="60">60 Days</option>
+            <option value="90">90 Days</option>
+        </select>
+        <br>
+        <button class="button-64" role="button" onclick="lookupStock()"><span class="text">Lookup</span></button>
+    </div>
+
+    <div class="chart-container">
+        <canvas id="stockChart"></canvas>
+    </div>
+
+    <div class="reddit-stocks">
+        <h2>Top 5 Reddit Stocks</h2>
+        <table id="redditStocks">
+            <thead>
+                <tr>
+                    <th>Ticker</th>
+                    <th>Comment Count</th>
+                    <th>Sentiment</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <div class="audio-control">
+        <h3>In this web page there are options to Navigate using Audio!</h3>
+        <p>Ensure your Mic is enabled to be able to use this feature</p>
+        <ul>
+            <li>Navigate to a Different Page
+                <ul>
+                    <li>Say: Navigate to &lt;page&gt;</li>
+                </ul>
+            </li>
+            <li>Change the Page Color
+                <ul>
+                    <li>Say: Change the color to &lt;color&gt;</li>
+                </ul>
+            </li>
+            <li>Say Hello Back to you!
+                <ul>
+                    <li>Say: Hello</li>
+                </ul>
+            </li>
+            <li>Lookup a Stock
+                <ul>
+                    <li>Say: Lookup &lt;stock&gt;</li>
+                </ul>
+            </li>
+        </ul>
+        <div class="button-container">
+            <button onclick="startListening()" class="button">Turn On Listening</button>
+            <button onclick="stopListening()" class="button">Turn Off Listening</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
